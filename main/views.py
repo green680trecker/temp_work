@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+
+from main.models import Product
+
+
 # Create your views here.
 
 def index(request):
-    return HttpResponse(f"[INFO!] <b>Status code: {HttpResponse.status_code}</b> <div>Good work</div>")
+    return render(request, "main/index.html")
 
 def wish(request):
-    return HttpResponse("<h1>I want to play the space station 13</h1>")
+    products = Product.objects.all()
+    return render(request, 'main/wish.html', {'products': products})
