@@ -1,16 +1,25 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-Main page
+    Категории
 {% endblock %}
-
 
 {% block body %}
-<div>
-    [INFO!] <b>Status code: 200</b> <div>Good work</div>
-</div>
+    <h2>Список категорій</h2>
+    <table>
+        <tr>
+            <th>Назва</th>
+            <th>Час створення</th>
+        </tr>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.title }}</td>
+            <td>{{ category.created_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Немає категорій.</td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
-
-<!--    <div>-->
-<!--        [INFO!] <b>Status code: 200</b> <div>Good work</div>-->
-<!--    </div>-->
