@@ -15,3 +15,7 @@ th, td {
 th {
     background: #f4f4f4;
 }
+button {
+    margin-left: 10px;
+    border-radius: 4px;
+}

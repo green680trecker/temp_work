@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Категорії
+{% endblock %}
+
+{% block body %}
+  <div class="MyProduct">
+        <table>
+        <tr>
+            <th>Назва</th>
+            <th>Обновлено</th>
+        </tr>
+        <tr>
+            <td>{{ category.title }}</td>
+            <td>{{ category.created_at }}</td>
+        </tr>
+    </table>
+    <a href="/" style="margin-top: 15px;">Вернутся назад</a>
+  </div>
+{% endblock %}

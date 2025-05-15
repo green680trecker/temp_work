@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Продукти
+{% endblock %}
+
+{% block body %}
+  <div class="MyProduct">
+        <table>
+        <tr>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Кількість</th>
+            <th>Категория</th>
+            <th>Создано</th>
+            <th>Обновлено</th>
+        </tr>
+        <tr>
+            <td>{{ product.title }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.product_qty }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.created_at }}</td>
+            <td>{{ product.updated_at }}</td>
+        </tr>
+    </table>
+    <a href="/wish" style="margin-top: 15px;">Вернутся назад</a>
+  </div>
+{% endblock %}

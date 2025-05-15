@@ -1,27 +1,26 @@
-"""
-URL configuration for base project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.contrib import admin
 from django.urls import path
-
 from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="index"),
-    path("wish/", views.wish, name="wish")
+
+    path('wish/create_product/', views.create_product, name="create_product"),
+    path('create_category/', views.create_category, name="create_category"),
+
+
+    path('', views.category_list, name="index"),
+    path("wish/", views.product_list, name="wish"),
+
+
+    path("wish/<slug:slug>/", views.ProductsView.as_view(), name="wish_view"),
+    path("<slug:slug>/", views.CategoryView.as_view(), name="category_view"),
+
+
+    path("wish/<slug:slug>/update/", views.ProductsUpdate.as_view(), name="wish_update"),
+    path("<slug:slug>/update/", views.CategoryUpdate.as_view(), name="category_update"),
+
+
+    path("wish/<slug:slug>/delete/", views.ProductsDelete.as_view(), name="wish_delete"),
+    path("<slug:slug>/delete/", views.CategoryDelete.as_view(), name="category_delete"),
 ]

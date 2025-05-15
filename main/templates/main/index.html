@@ -1,25 +1,37 @@
 {% extends 'main/base.html' %}
 
-{% block title %}
-    Категории
-{% endblock %}
+{% block title %}Категорії{% endblock %}
 
 {% block body %}
-    <h2>Список категорій</h2>
-    <table>
-        <tr>
-            <th>Назва</th>
-            <th>Час створення</th>
-        </tr>
-        {% for category in categories %}
-        <tr>
-            <td>{{ category.title }}</td>
-            <td>{{ category.created_at }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="4">Немає категорій.</td>
-        </tr>
-        {% endfor %}
-    </table>
+<h2>Список категорій (усього: {{ category_count }})</h2>
+
+<form method="get">
+    <label for="count">Кількість для відображення:</label>
+    <input type="number" name="count" id="count" min="1" max="{{ category_count }}" value="{{ current_count }}">
+    <button type="submit">Показати</button>
+</form>
+
+<table>
+    <tr>
+        <th>Назва</th>
+        <th>Час створення</th>
+        <th>Дії</th>
+    </tr>
+    {% for category in categories %}
+    <tr>
+        <td>{{ category.title }}</td>
+        <td>{{ category.created_at }}</td>
+        <td>
+            <a href="{% url 'category_view' category.slug %}">Переглянути</a> |
+            <a href="{% url 'category_update' category.slug %}">Оновити</a> |
+            <a href="{% url 'category_delete' category.slug %}">Видалити</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2">Немає категорій.</td>
+    </tr>
+    {% endfor %}
+</table>
+<p><a href="{% url 'create_category' %}" class="btn btn-success">➕ Створити продукт</a></p>
 {% endblock %}
