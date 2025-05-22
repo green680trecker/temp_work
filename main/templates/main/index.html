@@ -1,0 +1,72 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block body %}
+<aside>
+  <div class="logo-block">
+    <img src="{% static 'main/images/index_logo.jpeg' %}" alt="logo">
+    <span class="logo">Universe</span>
+  </div>
+
+  <h3>Навигация</h3>
+  <ul>
+    <a href=""><li><i class="bi bi-person-fill"></i> Профиль</li></a>
+    <a href=""><li>Услуги</li></a>
+    <a href=""><li>Контакты</li></a>
+    <a href=""><li>Об нас</li></a>
+  </ul>
+</aside>
+
+<main class="main-content" style="margin-left: 20%; position: relative;">
+  <!-- Верхняя серая панель -->
+  <div class="top-banner d-flex justify-content-end align-items-center">
+    <div class="triangle"></div>
+    <a href="#" class="me-3">
+      <i class="bi bi-person-circle text-primary fs-4"></i>
+    </a>
+    <a href="" class="me-4">
+      <i class="bi bi-trash-fill text-dark fs-4"></i>
+    </a>
+  </div>
+
+  <!-- Центральный контент -->
+  <div class="container py-5 text-center">
+    <!-- Фото -->
+    <img src="{% static 'main/images/index_front.jpeg' %}"
+         alt="Internet Club Photo" class="img-fluid rounded shadow mb-4" style="max-width: 700px;">
+    <h4 class="mb-5">Добро пожаловать в Universe Club</h4>
+
+    <!-- Цены -->
+    <h5 class="mb-4">Цены</h5>
+    <div class="row justify-content-center">
+      <!-- Будние -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6>В будние дни</h6>
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61456.png"
+             alt="Clock Weekdays" class="img-fluid mb-2" style="max-height: 120px;">
+        <div>
+          <button class="btn btn-secondary btn-sm">Забронировать</button>
+        </div>
+      </div>
+
+      <!-- Выходные -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6>Выходные</h6>
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61456.png"
+             alt="Clock Weekends" class="img-fluid mb-2" style="max-height: 120px;">
+        <div>
+          <button class="btn btn-secondary btn-sm">Забронировать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+{% endblock %}

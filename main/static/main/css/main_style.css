@@ -1,0 +1,114 @@
+body {
+    background: #3f3d3d;
+    margin: 0;
+}
+
+aside {
+    float: left;
+    background: #72b0a1;
+    width: 20%;
+    padding: 10px;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-block img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+aside .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+aside h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside ul a {
+    color: white;
+    text-decoration: none;
+}
+
+aside ul li {
+    margin: 10px 0 0 15px;
+    padding: 5px 0;
+    color: white;
+    display: block;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.main-content {
+    background: white;
+    min-height: 100vh;
+    padding: 20px;
+    margin-left: 20%;
+    position: relative;
+}
+
+.top-banner {
+    height: 50px;
+    background: #ccc;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 50px solid white;
+}
+
+.main-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+    text-align: center;
+}
+
+.main-content button {
+    margin-top: 10px;
+}
+
+.top-banner a {
+    color: inherit;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.top-banner a:hover {
+    transform: scale(1.2);
+}
+
+
