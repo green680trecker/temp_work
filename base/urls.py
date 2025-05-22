@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
 
     path('wish/create_product/', views.create_product, name="create_product"),
     path('create_category/', views.create_category, name="create_category"),
