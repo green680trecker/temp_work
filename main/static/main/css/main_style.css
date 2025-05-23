@@ -111,4 +111,17 @@ aside ul li:hover, aside ul a:hover {
     transform: scale(1.2);
 }
 
+.registration-form {
+    width: 100%;
+    max-width: 400px;
+}
 
+.custom-input {
+    background-color: #d3d3d3;
+    border: none;
+    height: 45px;
+}
+
+.custom-input::placeholder {
+    color: #555;
+}
