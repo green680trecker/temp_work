@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-from django.conf.global_settings import LOGIN_REDIRECT_URL
+from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -131,4 +131,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = "registration:login"
 LOGIN_REDIRECT_URL = reverse_lazy("main:profile")
+LOGOUT_REDIRECT_URL = "registration:login"
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 2
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False

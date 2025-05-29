@@ -10,30 +10,100 @@
         {% csrf_token %}
         <h3 class="text-center mb-4">Регистрация</h3>
 
+        {{ form.non_field_errors }}
+
+        <!-- Имя пользователя (логин) -->
         <div class="mb-3">
-            <label for="first_name" class="form-label">Имя</label>
-            <input type="text" id="first_name" class="form-control custom-input" name="first_name" placeholder="Введите имя" required>
+            <label class="form-label">{{ form.username.label }}</label>
+            {{ form.username }}
+            {{ form.username.errors }}
         </div>
 
+        <!-- Email -->
         <div class="mb-3">
-            <label for="last_name" class="form-label">Фамилия</label>
-            <input type="text" id="last_name" class="form-control custom-input" name="last_name" placeholder="Введите фамилию" required>
+            <label class="form-label">{{ form.email.label }}</label>
+            {{ form.email }}
+            {{ form.email.errors }}
         </div>
 
+        <!-- Пароль -->
         <div class="mb-3">
-            <label for="phone" class="form-label">Номер телефона</label>
-            <input type="tel" id="phone" class="form-control custom-input" name="phone" placeholder="Введите номер" required>
+            <label class="form-label">{{ form.password.label }}</label>
+            {{ form.password }}
+            {{ form.password.errors }}
         </div>
 
+        <!-- Ім'я -->
         <div class="mb-3">
-            <label for="dob" class="form-label">Дата рождения</label>
-            <input type="date" id="dob" class="form-control custom-input" name="dob" required>
+            <label class="form-label">{{ form.name.label }}</label>
+            {{ form.name }}
+            {{ form.name.errors }}
+        </div>
+
+        <!-- Прізвище -->
+        <div class="mb-3">
+            <label class="form-label">{{ form.surname.label }}</label>
+            {{ form.surname }}
+            {{ form.surname.errors }}
+        </div>
+
+        <!-- Номер телефону -->
+        <div class="mb-3">
+            <label class="form-label">{{ form.phone_number.label }}</label>
+            {{ form.phone_number }}
+            {{ form.phone_number.errors }}
+        </div>
+
+        <!-- Дата народження -->
+        <div class="mb-3">
+            <label class="form-label">{{ form.date_birth.label }}</label>
+            {{ form.date_birth }}
+            {{ form.date_birth.errors }}
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
-            <button type="submit" class="btn btn-secondary">Подтвердить</button>
-            <a href="" class="text-decoration-none">Уже есть аккаунт?</a>
+            <button type="submit" class="btn btn-secondary">Зареєструватися</button>
+            <a href="{% url 'login' %}" class="text-decoration-none">Уже є акаунт?</a>
         </div>
     </form>
+<!--    <form method="post" class="registration-form p-4 rounded shadow bg-white">-->
+<!--        {% csrf_token %}-->
+<!--        <h3 class="text-center mb-4">Регистрация</h3>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="nickname" class="form-label">Никнейм</label>-->
+<!--            <input type="text" id="nickname" class="form-control custom-input" name="first_name" placeholder="Введите Никнейм" required>-->
+<!--        </div>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="first_name" class="form-label">Имя</label>-->
+<!--            <input type="text" id="first_name" class="form-control custom-input" name="first_name" placeholder="Введите имя" required>-->
+<!--        </div>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="last_name" class="form-label">Фамилия</label>-->
+<!--            <input type="text" id="last_name" class="form-control custom-input" name="last_name" placeholder="Введите фамилию" required>-->
+<!--        </div>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="phone" class="form-label">Номер телефона</label>-->
+<!--            <input type="tel" id="phone" class="form-control custom-input" name="phone" placeholder="Введите номер" required>-->
+<!--        </div>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="dob" class="form-label">Дата рождения</label>-->
+<!--            <input type="date" id="dob" class="form-control custom-input" name="dob" required>-->
+<!--        </div>-->
+
+<!--        <div class="mb-3">-->
+<!--            <label for="password" class="form-label">Пароль</label>-->
+<!--            <input type="password" id="password" class="form-control custom-input" name="password" placeholder="Введите пароль" required>-->
+<!--        </div>-->
+
+<!--        <div class="d-flex justify-content-between align-items-center">-->
+<!--            <button type="submit" class="btn btn-secondary">Подтвердить</button>-->
+<!--            <a href="" class="text-decoration-none">Уже есть аккаунт?</a>-->
+<!--        </div>-->
+<!--    </form>-->
 </div>
 {% endblock %}
